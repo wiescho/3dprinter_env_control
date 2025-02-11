@@ -1,0 +1,14 @@
+[Unit]
+Description=Klipper Sensor Injection Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+# Update the path to your python3 executable and your script's path.
+ExecStart=/usr/bin/python3 /path/to/inject_sensor.py
+WorkingDirectory=/path/to/
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
